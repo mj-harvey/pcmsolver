@@ -1,0 +1,28 @@
+# This file created by conda-build 1.21.4
+# meta.yaml template originally from:
+# /theoryfs2/ds/cdsgroup/psi4-compile/psi4meta/conda-recipes/pcmsolver, last modified Wed Jul  6 10:20:58 2016
+# ------------------------------------------------
+
+package:
+    name: pcmsolver
+    version: 1.1.4
+source:
+    git_rev: v1.1.4
+    git_url: git@github.com:PCMSolver/pcmsolver.git
+build:
+    binary_relocation: 'true'
+    number: '0'
+requirements:
+    build:
+        - cmake >=2.8.10
+        - zlib
+    run:
+        - zlib
+test:
+    commands:
+        - test -f $PREFIX/lib/libpcm.so
+about:
+    home: http://pcmsolver.readthedocs.org/en/latest/
+    license: GNU Lesser General Public License v3 (LGPLv3)
+    readme: README.md
+    summary: Polarizable Continuum Model API
